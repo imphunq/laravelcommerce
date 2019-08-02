@@ -127,5 +127,3 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 		Route::get('xoa/{id}','UserController@getXoa');
 	});
 });
-
-Route::get('hello','HomeController@getHello');
