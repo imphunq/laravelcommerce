@@ -29,4 +29,8 @@ class User extends Authenticatable
     ];
     public $remember_token=false;
     protected $table = 'user';
+
+    public function order(){
+        return $this->hasMany('App\order', 'user_id', 'id');
+    }
 }

@@ -126,4 +126,11 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 
 		Route::get('xoa/{id}','UserController@getXoa');
 	});
+
+	Route::group(['prefix'=>'order'],function(){
+		Route::get('danhsach','OrderController@getDanhSach');
+	});
+
 });
+
+
