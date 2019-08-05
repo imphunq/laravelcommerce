@@ -75,6 +75,19 @@
                 </ul>
                 <!-- /.nav-second-level -->
             </li>
+
+             <li>
+                <a href="#"><i class="fa fa-users fa-fw"></i> Order<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="admin/order/danhsach">List order</a>
+                    </li>
+                    <li>
+                        <a href="admin/order/them">Add order</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
         </ul>
     </div>
     <!-- /.sidebar-collapse -->
