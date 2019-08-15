@@ -25,18 +25,11 @@
                             <p class="color">Color: {{$item->options->color}}</p>
                             <p class="price">Price: {{$item->price}}</p>
                             <span>Số lượng: {{$item->qty}}</span>
-                            <input type="number" value="{{$item->qty}}" name="">
                         </div>
                     </a>
                     <a class="xoa" href="{!!url('xoa-san-pham',['id'=>$item->rowId])!!}">Xóa sản phẩm</a>
-                    {{-- <a class="sua" href="{!!url('chi-tiet-san-pham',['id'=>$item->rowId,'tenloai'=>$item->name])!!}">Sửa</a> --}}
                 </div>
                 @endforeach
-                <!-- Single Cart Item -->
-                
-
-                <!-- Single Cart Item -->
-                
             </div>
 
             <!-- Cart Summary -->
@@ -47,6 +40,7 @@
                     <li><span>Total:</span> <span>{{$total}}</span></li>
                 </ul>
                 <div class="checkout-btn mt-100">
+                    <a href="{{url('cart')}}" class="btn essence-btn">detail cart</a>
                     <a href="{{url('checkout')}}" class="btn essence-btn">check out</a>
                 </div>
             </div>

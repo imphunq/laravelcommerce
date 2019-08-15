@@ -25,18 +25,13 @@ Route::get('lien-he','HomeController@get_lienhe')->name('lien-he');
 Route::post('lien-he','HomeController@post_lienhe')->name('lien-he');
 
 Route::post('mua-hang/{id}/{tensanpham}','HomeController@muahang')->name('mua-hang');
-// Route::post('mua-hang/{id}/{tensanpham}','HomeController@postmuahang')->('mua-hang');
+Route::get('cart', 'HomeController@getDetailCart')->name('detailcart');
+Route::post('updateCart/{id}', 'HomeController@updateCart')->name('update-cart');
+
 Route::get('xoa-san-pham/{id}','HomeController@xoasanpham')->name('xoa-san-pham');
 Route::get('sua-san-pham/{id}','HomeController@suasanpham')->name('sua-san-pham');
 Route::get('gio-hang','HomeController@giohang')->name('gio-hang');
-// /*tempalde admin*/
-// Route::get('/admin','UserController@content');
-// Route::get('/table','UserController@table');
-// Route::get('form','UserController@form');
 
-// Route::get('/checkDB',function(){
-// 	dd(DB::connection()->getDatabaseName());
-// });
 Route::get('dang-nhap','HomeController@dangnhap')->name('dang-nhap');
 Route::post('dang-nhap','HomeController@postdangnhap')->name('dang-nhap');
 Route::get('dang-xuat','HomeController@dangxuat')->name('dang-xuat');
