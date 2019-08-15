@@ -48,6 +48,7 @@
                     <option value="{{$color->id}}">Color: {{$color->name}}</option>
                     @endforeach
                 </select>
+                Quantity: <input type="number" name="quantity" id="quantity" value="1">
             </div>
             <!-- Cart & Favourite Box -->
             <div class="cart-fav-box d-flex align-items-center">

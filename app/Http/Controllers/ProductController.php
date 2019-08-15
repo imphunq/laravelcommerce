@@ -13,10 +13,6 @@ class ProductController extends Controller
     //
     public function getDanhSach()
     {
-        // $product = product::all();
-        // $color = color::all();
-        // $size = size::all();
-        // $category = category::all();
         $product = DB::table('product')
             ->join('category', 'category.id', '=', 'product.cat_id')
             ->join('color', 'color.id', '=', 'product.color_id')

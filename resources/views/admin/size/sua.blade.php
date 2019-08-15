@@ -15,6 +15,9 @@
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <div class="form-group">
                                 <label>Size Name</label>
+{{--                                 @foreach($size as $size)
+                                    <option value="{{$size->id}}">Size: {{$size->name}}</option>
+                                @endforeach --}}
                                 <input class="form-control" name="name" placeholder="Please Enter Size Name" value="{{$size->name}}" />
                             </div>
                             <div class="form-group">
