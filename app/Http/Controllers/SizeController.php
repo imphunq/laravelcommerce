@@ -16,7 +16,7 @@ class SizeController extends Controller
     public function getSua($id)
     {
         $size = size::find($id);
-    	return view('admin.size.sua',['size'=>$size]);
+        return view('admin.size.sua',['size'=>$size]);
     }
 
     public function postSua(Request $request,$id)

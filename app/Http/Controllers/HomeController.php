@@ -104,14 +104,9 @@ class HomeController extends Controller
 
     public function muahang(Request $request,$id)
     {
-    
-    //router chi-tiet-san-pham này mới có size với color nha b
-        //route mua hang chua có size vs color, mình tưởng có hết rồi @@
-        // dd($resquest->all());exit();
-        // $color = $request->selectcolor;
-        // dd($color);
         $color = $request->selectcolor;
         $size = $request->selectsize;
+        $quantity = $request->quantity;
         $tableColor = DB::table('color')->select('id','name','code')->get();
         $tableSize = DB::table('size')->select('id','name')->get();
         // print_r($tableColor); exit();
@@ -121,10 +116,9 @@ class HomeController extends Controller
                 $mau= $cl->name;
         foreach($tableSize as $s)
             if($size==$s->id)
-                $co = $s->name;
-         // exit();       
+                $co = $s->name;       
         $product_buy = DB::table('product')->where('id',$id)->first();
-        Cart::add(array('id'=>$id,'name'=>$product_buy->nameProduct,'qty'=>1,'price'=>$product_buy->price,'options'=>array('img'=>$product_buy->images,'color'=>$mau,'size'=>$co)));
+        Cart::add(array('id'=>$id,'name'=>$product_buy->nameProduct,'qty'=>$quantity,'price'=>$product_buy->price,'options'=>array('img'=>$product_buy->images,'color'=>$mau,'size'=>$co)));
         $content = Cart::content();
 
         return redirect()->back();
@@ -132,7 +126,7 @@ class HomeController extends Controller
     public function xoasanpham($id)
     {
         Cart::remove($id);
-        return redirect('');
+        return redirect('/cart');
     }
 
     // Dang nhap
@@ -210,5 +204,16 @@ class HomeController extends Controller
     {
         $product = DB::table('product')->where('nameProduct','like','%'.$request->search.'%')->get();
         return view('pages.search',compact('product'));
+    }
+
+    public function getDetailCart()
+    {
+        if(isset($_GET["id"])&&isset($_GET["quantity"]))
+        {
+            $id = $_GET["id"];
+            $qty = $_GET["quantity"];
+            Cart::update($id, $qty);
+        }
+        return view('pages.cart');
     }
 }
