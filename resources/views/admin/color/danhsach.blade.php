@@ -30,7 +30,7 @@
                                 <td>{{$color->code}}</td>
                                 <td>{{$color->dateCreate}}</td>
                                 <td>{{$color->status}}</td>
-                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/color/xoa/{{$color->id}}"> Delete</a></td>
+                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a onclick="return confirm('Delete yes or no') href="admin/color/xoa/{{$color->id}}"> Delete</a></td>
                                 <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/color/sua/{{$color->id}}">Edit</a></td>
                             </tr>
                            @endforeach

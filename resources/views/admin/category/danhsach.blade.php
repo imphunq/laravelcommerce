@@ -33,7 +33,7 @@
                                 <td>{{$tl->title}}</td>
                                 <td>{{$tl->status}}</td>
                                 <td>{{$tl->dateCreate}}</td>
-                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/category/xoa/{{$tl->id}}"> Delete</a></td>
+                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a onclick="return confirm('Delete yes or no')" href="admin/category/xoa/{{$tl->id}}"> Delete</a></td>
                                 <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/category/sua/{{$tl->id}}">Edit</a></td>
                             </tr>
                         @endforeach   

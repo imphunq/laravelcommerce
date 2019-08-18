@@ -38,7 +38,7 @@
                                 <td>{{$user->birthday}}</td>
                                 <td>{{$user->address}}</td>
                                 <td>{{$user->status}}</td>
-                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/user/xoa/{{$user->id}}"> Delete</a></td>
+                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a onclick="return confirm('Delete yes or no') href="admin/user/xoa/{{$user->id}}"> Delete</a></td>
                                 <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/user/sua/{{$user->id}}">Edit</a></td>
                             </tr>
                             @endforeach
