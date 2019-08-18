@@ -48,10 +48,12 @@
                     <option value="{{$color->id}}">Color: {{$color->name}}</option>
                     @endforeach
                 </select>
-                Quantity: <input type="number" name="quantity" id="quantity" value="1">
+            </div>
+            <div class="col-md-6">
+            Quantity: <input type="number" class="form-control" name="quantity" id="quantity" value="1">
             </div>
             <!-- Cart & Favourite Box -->
-            <div class="cart-fav-box d-flex align-items-center">
+            <div class="cart-fav-box d-flex align-items-center" style="margin-top: 20px">
                 <!-- Cart -->
                {{--  <a href="{{url('mua-hang',[$product_detail->id,$product_detail->nameProduct])}}" class="btn essence-btn">Add to Cart</a> --}}
                <button type="submit" class="btn btn-success">Add to Cart</button>
