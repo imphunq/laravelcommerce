@@ -4,6 +4,6 @@
     line-height: 100px;
 }
 
-input#changeNumberProduct  {
+input.changeNumberProduct  {
     margin-top: 40px;
 }
