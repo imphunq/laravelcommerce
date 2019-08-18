@@ -28,7 +28,7 @@
                                 <td>{{$size->name}}</td>
                                 <td>{{$size->status}}</td>
                                 <td>{{$size->dateCreate}}</td>
-                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/size/xoa/{{$size->id}}"> Delete</a></td>
+                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a onclick="return confirm('Delete yes or no') href="admin/size/xoa/{{$size->id}}"> Delete</a></td>
                                 <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/size/sua/{{$size->id}}">Edit</a></td>
                             </tr>
                             @endforeach

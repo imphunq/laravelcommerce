@@ -45,7 +45,7 @@
                                 <td>{{$sp->description}}</td>
                                 <td>{{$sp->status}}</td>
                                 <td>{{$sp->dateCreate}}</td>
-                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/product/xoa/{{$sp->id}}"> Delete</a></td>
+                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a onclick="return confirm('Delete yes or no') href="admin/product/xoa/{{$sp->id}}"> Delete</a></td>
                                 <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/product/sua/{{$sp->id}}">Edit</a></td>
                             </tr>
                         @endforeach
