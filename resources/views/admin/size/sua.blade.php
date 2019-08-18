@@ -1,5 +1,8 @@
 @extends('admin.layout.index')
+<?php 
+    $sizetable = DB::table('size')->select('name','id')->get();
 
+?>
 @section('content')
 <div id="page-wrapper">
             <div class="container-fluid">
@@ -15,14 +18,17 @@
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <div class="form-group">
                                 <label>Size Name</label>
-{{--                                 @foreach($size as $size)
-                                    <option value="{{$size->id}}">Size: {{$size->name}}</option>
-                                @endforeach --}}
-                                <input class="form-control" name="name" placeholder="Please Enter Size Name" value="{{$size->name}}" />
+                                <select class="form-control" name="size">
+                                    <option value="0">Please Choose Size</option>
+                                    @foreach($sizetable as $sizetable)
+                                    <option value="{{$sizetable->id}}" @if($sizetable->id==$size->id) {{"selected"}} @endif>{{$sizetable->name}}
+                                    </option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label>Date Create</label>
-                                <input class="form-control" name="dateCreate" placeholder="Please Enter Date" value="{{$size->dateCreate}}" />
+                                <input type="date" class="form-control" name="dateCreate" placeholder="Please Enter Date" value="{{$size->dateCreate}}" />
                             </div>
                             <div class="form-group">
                                 <label>Size Status</label>

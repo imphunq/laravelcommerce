@@ -15,22 +15,6 @@ $(document).on('change', '#sortByselect', function(){
 	optionBySelect();
 });
 
-function changeQuantityCart()
-{
-    var quantity = $('.changeNumberProduct').val();
-    var id = $('.id_pro').val();
-    $.ajax({
-        url: 'cart',
-        method: 'get',
-        data: {
-            id: id,
-            qty: quantity
-        },
-        success: function(){
-            alert(quantity);
-        }
-    });
-}
 
 $('.changeNumberProduct').on('blur', function(){
     var qty = $(this).val();
@@ -47,3 +31,15 @@ $('.changeNumberProduct').on('blur', function(){
         }
     });
 });
+
+function updateOrder() {
+    var id = $('#getIdOrder').attr('data-id');
+    $.ajax({
+        url: 'admin/order/danhsach',
+        method: 'post',
+        data: {
+            id: id
+        }
+    });
+}
+

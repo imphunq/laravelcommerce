@@ -66,5 +66,5 @@
 
     @yield('script')
 </body>
-
+<script src="{!! asset("js/custom.js") !!}"></script>
 </html>

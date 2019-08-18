@@ -7,6 +7,8 @@ use App\product;
 use DB;
 use Mail;
 use App\User;
+use App\order;
+use App\order_detail;
 use Hash;
 use Session;
 use Auth;
@@ -96,6 +98,19 @@ class HomeController extends Controller
             $msg->from($mail,'KhachHang');
             $msg->to('phube232@gmail.com','Chu')->subject('ĐƠN MUA HÀNG');
         });
+        $order = new order();
+        $order->total = Cart::subtotal();
+        $order->user_id = 0;
+        $order->dateCreate = '2019-08-08';
+        $order->status = 0;
+        $order->email = $mail;
+        $order->address = $request->street_address;
+        $order->transport_id = $request->transport;
+        $order->mobile = $request->phone_number;
+        $order->fullName = $request->name;
+        $order->save();
+        Cart::destroy();
+        $max_order = $order->id;
         echo "<script>
             alert('Cám ơn bạn đã mua hàng');
             window.location.href = '".url('/')."'

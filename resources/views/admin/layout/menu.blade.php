@@ -82,8 +82,15 @@
                     <li>
                         <a href="admin/order/danhsach">List order</a>
                     </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+
+            <li>
+                <a href="#"><i class="fa fa-users fa-fw"></i> Order Detail<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
                     <li>
-                        <a href="admin/order/them">Add order</a>
+                        <a href="admin/order_detail/danhsach">List order detail</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->

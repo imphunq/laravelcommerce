@@ -124,6 +124,11 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 
 	Route::group(['prefix'=>'order'],function(){
 		Route::get('danhsach','OrderController@getDanhSach');
+		Route::get('update/{id}', 'OrderController@update');
+	});
+
+	Route::group(['prefix'=>'order_detail'],function(){
+		Route::get('danhsach','OrderDetailController@getDanhSach');
 	});
 
 });
